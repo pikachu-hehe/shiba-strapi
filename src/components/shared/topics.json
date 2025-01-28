@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_topics",
+  "info": {
+    "displayName": "Topics"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
+    }
+  }
+}

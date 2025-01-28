@@ -7,11 +7,11 @@
   },
   "options": {},
   "attributes": {
-    "files": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": ["images"]
+    "Slide": {
+      "displayName": "Slides",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.slides"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_slider_items",
+  "info": {
+    "displayName": "Slider Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Desription": {
+      "type": "text"
+    },
+    "Date": {
+      "type": "date",
+      "default": "2025-01-07"
+    },
+    "Link": {
+      "type": "string"
+    }
+  }
+}
