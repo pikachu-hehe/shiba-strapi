@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "topics",
+  "info": {
+    "singularName": "topic",
+    "pluralName": "topics",
+    "displayName": "Topic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero_Section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-section-block"
+    },
+    "Topics": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.topics"
+    }
+  }
+}
