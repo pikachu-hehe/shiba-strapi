@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedFeaturedPosts extends Struct.ComponentSchema {
+  collectionName: 'components_shared_featured_posts';
+  info: {
+    displayName: 'Featured_posts';
+    icon: 'bulletList';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+  };
+}
+
 export interface SharedHeroSectionBlock extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_section_blocks';
   info: {
@@ -128,6 +139,7 @@ export interface SharedTopics extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.featured-posts': SharedFeaturedPosts;
       'shared.hero-section-block': SharedHeroSectionBlock;
       'shared.media': SharedMedia;
       'shared.menu-item': SharedMenuItem;

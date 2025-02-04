@@ -5,7 +5,11 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::home.home", ({ strapi }) => ({
 	async find(ctx) {
 		ctx.query = {
+
 			populate: {
+				Hero: {
+					populate: '*'
+				},
 				Topics: {
 					populate: ["categories"],
 				},

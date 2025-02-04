@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_featured_posts",
+  "info": {
+    "displayName": "Featured_posts",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}
