@@ -4,22 +4,37 @@
   "info": {
     "singularName": "topic",
     "pluralName": "topics",
-    "displayName": "Topic"
+    "displayName": "Topic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Hero_Section": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-section-block"
+      "component": "shared.hero-section-block",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Topics": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.topics"
+      "component": "shared.topics",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

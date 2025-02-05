@@ -10,6 +10,7 @@ module.exports = createCoreController("api::article.article", ({ strapi }) => ({
 	async find(ctx) {
 		// Modify ctx.query to define your custom population
 		ctx.query.populate = {
+			// ...ctx.query,
 			cover: {
 				populate: '*',
 			},
@@ -34,7 +35,7 @@ module.exports = createCoreController("api::article.article", ({ strapi }) => ({
 		// Manually define a non-cyclical population
 		const article = await strapi.db.query("api::article.article").findOne({
 			where: { id },
-
+			...ctx.query,
 			populate: {
 				cover: true,
 				Featured_Posts: {

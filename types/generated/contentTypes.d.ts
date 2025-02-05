@@ -626,12 +626,18 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
 export interface ApiTopicTopic extends Struct.SingleTypeSchema {
   collectionName: 'topics';
   info: {
+    description: '';
     displayName: 'Topic';
     pluralName: 'topics';
     singularName: 'topic';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -640,12 +646,21 @@ export interface ApiTopicTopic extends Struct.SingleTypeSchema {
     Hero_Section: Schema.Attribute.Component<
       'shared.hero-section-block',
       false
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::topic.topic'> &
-      Schema.Attribute.Private;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::topic.topic'>;
     publishedAt: Schema.Attribute.DateTime;
-    Topics: Schema.Attribute.Component<'shared.topics', false>;
+    Topics: Schema.Attribute.Component<'shared.topics', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
