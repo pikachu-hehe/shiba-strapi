@@ -7,11 +7,10 @@
   },
   "options": {},
   "attributes": {
-    "Slide": {
-      "displayName": "Slides",
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.slides"
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
     }
   }
 }

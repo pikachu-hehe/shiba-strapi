@@ -94,31 +94,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
     icon: 'address-book';
   };
   attributes: {
-    Slide: Schema.Attribute.Component<'shared.slides', false>;
-  };
-}
-
-export interface SharedSliderItem extends Struct.ComponentSchema {
-  collectionName: 'components_shared_slider_items';
-  info: {
-    description: '';
-    displayName: 'Slider Item';
-  };
-  attributes: {
-    Date: Schema.Attribute.Date & Schema.Attribute.DefaultTo<'2025-01-07'>;
-    Desription: Schema.Attribute.Text;
-    Link: Schema.Attribute.String;
-    Title: Schema.Attribute.String;
-  };
-}
-
-export interface SharedSlides extends Struct.ComponentSchema {
-  collectionName: 'components_shared_slides';
-  info: {
-    displayName: 'Slides';
-  };
-  attributes: {
-    Slide: Schema.Attribute.Component<'shared.slider-item', true>;
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
   };
 }
 
@@ -147,8 +123,6 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
-      'shared.slider-item': SharedSliderItem;
-      'shared.slides': SharedSlides;
       'shared.topics': SharedTopics;
     }
   }

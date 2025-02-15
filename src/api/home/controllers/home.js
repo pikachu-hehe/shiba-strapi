@@ -15,10 +15,12 @@ module.exports = createCoreController("api::home.home", ({ strapi }) => ({
 				},
 				Slider: {
 					populate: {
-						Slide: {
-							populate: "*", // Populate everything inside Slide
+						articles: {
+							// Omit or limit population here to avoid cycles
+							populate: ["category"],
 						},
 					},
+
 				},
 			},
 		};
