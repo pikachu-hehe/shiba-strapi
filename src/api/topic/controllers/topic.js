@@ -11,6 +11,9 @@ module.exports = createCoreController('api::topic.topic', ({ strapi }) => ({
 		ctx.query = {
 			...ctx.query,
 			populate: {
+				SEO_TAGS: {
+					populate: '*'
+				},
 				Hero_Section: { populate: '*' },
 				Topics: {
 					populate: ["categories"],

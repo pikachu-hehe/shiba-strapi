@@ -7,6 +7,9 @@ module.exports = createCoreController("api::home.home", ({ strapi }) => ({
 		ctx.query = {
 			...ctx.query,
 			populate: {
+				SEO_TAGS: {
+					populate: '*'
+				},
 				Hero: {
 					populate: '*'
 				},
