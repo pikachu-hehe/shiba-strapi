@@ -605,6 +605,12 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'>;
     publishedAt: Schema.Attribute.DateTime;
+    SEO_TAGS: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Slider: Schema.Attribute.Component<'shared.slider', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -655,6 +661,12 @@ export interface ApiTopicTopic extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::topic.topic'>;
     publishedAt: Schema.Attribute.DateTime;
+    SEO_TAGS: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     Topics: Schema.Attribute.Component<'shared.topics', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
